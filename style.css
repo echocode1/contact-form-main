@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --lighter-green :  hsl(148, 38%, 91%);
+    --medium-grey:  hsl(186, 15%, 59%);
+    --darker-grey: hsl(187, 24%, 22%);
+    --medium-green: hsl(169, 82%, 27%);
+    --red: hsl(0, 66%, 54%);
+    --white: hsl(0, 0%, 100%);
+}
+body{
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 16px;
+
+    background-color: var(--lighter-green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.form-main__container{
+    min-width: 300px;
+    margin: 7vh 20px;
+    padding: 20px 20px;
+    border-radius: 10px;
+    background-color: var(--white);
+    color: var(--darker-grey);
+    border: none;
+    overflow: hidden;
+}
+#header{
+    font-size: 2em;
+    margin-bottom: 25px;
+}
+span{
+    color: var(--medium-green);
+    margin-left: 5px;
+}
+#first-name, #last-name, #email-address{
+    padding: 15px 20px;
+    margin: 10px 0 ;
+}
+#first-name, #last-name, .query,
+#email-address, #message{
+    width: 100%;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    color: var(--darker-grey);
+    cursor: pointer;
+    border: 1.5px solid var(--medium-grey);
+    font-family: 'Karla';
+}
+#queries{
+    margin-top: 20px;
+}
+.query{
+    display: flex;
+    align-items: center;
+    padding: 12px 0 12px 10vw;
+    margin-bottom: 15px;
+}
+#first-name:focus, #last-name:focus,
+#email-address:focus{
+    border: 1.5px solid var(--medium-green);
+    outline: none;
+}
+#first-name:hover, #last-name:hover,
+#email-address:hover{
+    border:2px solid var(--medium-green);
+}
+input[type = "radio"]{
+    width: 17px;
+    height: 17px;
+    color: var(--medium-grey);
+    opacity: 40%;
+    margin-right: 15px;
+}
+.radio:focus, #consent-checkbox:focus,
+.radio:active, #consent-checkbox:active{
+    accent-color: var(--medium-green);
+    opacity: 99%;
+    outline: 1px solid var(--medium-green);
+}
+.form-main__container p{
+    display: none;
+    color: var(--red);
+}
+#name1, #name2, #email,.query__ section,
+#email, .message__section, #submit,
+.consent__section{
+    margin-top: 25px;
+}
+#message{
+    margin: 10px 0 5px 0;
+    height: 150px;
+    resize: none;
+    padding: 20px;
+    line-height: 1.5;
+}
+#message:focus{
+    outline: none;
+}
+#consent-checkbox{
+    margin-right: 20px;
+    position: relative;
+    top: 5px;
+    height: 17px;
+    width: 17px;
+}
+#submit{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: var(--medium-green);
+    color: var(--white);
+    font-family: 'karla';
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    margin: 25px 0 5px 0;
+    cursor: pointer;
+    transition: 0.025s ease-out;
+}
+#submit:active, #submit:focus{
+    outline: none;
+    background-color:  hsl(169, 73%, 14%);
+}
+#submit:hover{
+    background-color: hsl(169, 73%, 14%);
+}
+#consent-checkbox__guide{
+    margin-top: 10px;
+}
+
+/*---> success message style <---*/
+.success__message{
+    display: none;
+    margin: auto;
+    position: relative;
+    color:var(--white);
+    background-color: var(--darker-grey);
+    width: calc((80/100 )* 300px);
+    padding: 20px;
+    border-radius: 10px;
+    bottom: -60px;
+}
+#icon-message{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+#icon-text{
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+@media (min-width: 576px){
+    body{
+        height: 100vh;
+    }
+    .form-main__container{
+        width: 750px;
+        padding: 40px;
+        margin: auto;
+    }
+    .name__section, #queries{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    .query{
+        padding: 12px 0 12px 20px;
+    }
+    #message{
+        height: 100px;
+        border-radius: 10px;
+    }
+    #submit{
+        padding: 15px 0;
+    }
+
+    /* --> desktop-success <-- */
+    .success__message{
+        width: calc((70/100 )* 700px);
+        left: 1%;
+        top: 10px;
+    }
+    #icon-text{
+        margin-left: 10px;
+    }
+}
